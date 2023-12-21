@@ -53,6 +53,9 @@ def startsearch(message):
                     else:
                         newname = name.split('. ❌Цена: ', 1)[0]
                     print(newname)
+                    if newname[0] == '\U0001f90d':
+                        newname = newname.split('🤍', 1)[1]
+                    print(newname)
                     if message.text == '\U0001f90d':
                         print('cock3')
                         addfav = requests.put(BASE + '/addlottofav/'+newname).json()['message']
