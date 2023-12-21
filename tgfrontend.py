@@ -123,10 +123,10 @@ def show_lots(message, fav):
         name = message.text
     else:
         name = fav
-#        bot.send_message(message.from_user.id, 'Хорошо иди на хуй')
+        bot.send_message(message.from_user.id, 'Хорошо.')
     cameras = requests.post(BASE+'/show/'+name).json()['listofcams']
     if len(cameras) == 0 and fav == 'F':
-        bot.send_message(message.from_user.id, 'Нету избранных лотов')
+        bot.send_message(message.from_user.id, 'Нету избранных лотов.')
     else:
         for i in range(0, len(cameras)):
             if cameras[i][4] == 'F':
